@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+  <title><ui:insert name="title">Default Title</ui:insert></title>
+  <link href="#{request.contextPath}/css/simple.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+
+<h:body>
+    <div id="container">
+        <div id="header">
+            <ui:insert name="header">
+                <h1>Welcome to the sample JSF 2.3 application</h1>
+            </ui:insert>
+        </div>
+
+        <div id="content">
+            <ui:insert name="content">
+                Content
+            </ui:insert>
+        </div>
+
+        <div id="footer">
+            <ui:insert name="footer">
+                Powered by JavaServer Faces 2.3
+            </ui:insert>
+        </div>
+    </div>
+</h:body>
+</html>
