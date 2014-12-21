@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/WEB-INF/templates/simple.xhtml">      
+    <ui:define name="title">
+        Welcome to the sample application
+    </ui:define>
+    <ui:define name="content">
+        <h:form id="form1">
+        	<h1>Enter your information</h1>
+            <h:panelGrid columns="3">
+                <h:outputText value="Enter your name: "></h:outputText>
+                <h:inputText id="userName" 
+                             value="#{user.name}" 
+                             required="true"  
+                             requiredMessage="You need to enter a valid name">
+                </h:inputText>
+                <h:message for="userName" styleClass="errorMessage"/>
+            </h:panelGrid>
+            
+            <h:commandButton value="Greet" action="#{user.greet}">
+            </h:commandButton> 
+            
+            <br/><br/>
+            
+            <h:outputText value="Hello #{user.name}" rendered="#{user.name ne null}"/>  
+            
+            <br/><br/>
+                        
+            <h:message styleClass="informationMessage" for="form1"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+    
+</html>
